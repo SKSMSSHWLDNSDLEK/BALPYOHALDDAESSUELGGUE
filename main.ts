@@ -6,21 +6,21 @@ input.onButtonPressed(Button.AB, function () {
         basic.showString("warning")
     }
 })
-input.onButtonPressed(Button.A, function () {
-    if (24 <= input.temperature() && input.temperature() <= 26) {
-        basic.showIcon(IconNames.Happy)
-    }
-})
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
     외부온도 = input.temperature()
-    if (18 <= Math.round(input.temperature()) && Math.round(input.temperature()) <= 32) {
-        basic.showString("good")
-    } else {
-        if (18 > Math.round(input.temperature())) {
-            basic.showString("too cold")
-        }
-        if (30 < Math.round(input.temperature())) {
-            basic.showString("too hot")
-        }
+    if (28 < Math.round(input.temperature())) {
+        basic.showString("TOO HOT")
+    }
+    if (24 < Math.round(input.temperature()) && Math.round(input.temperature()) <= 28) {
+        basic.showString("HOT")
+    }
+    if (18 <= Math.round(input.temperature()) && Math.round(input.temperature()) <= 24) {
+        basic.showString("BEST")
+    }
+    if (14 <= Math.round(input.temperature()) && Math.round(input.temperature()) < 18) {
+        basic.showString("COLD")
+    }
+    if (Math.round(input.temperature()) < 14) {
+        basic.showString("TOO COLD")
     }
 })
